@@ -1,0 +1,52 @@
+// vector.cpp : Defines the entry point for the console application.
+// Autor: Fabiana Eguez
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+double promedio(double a[], int tamanio);
+void cargar(double a[], int tamanio);
+void mostrar(double a[], int tamanio);
+
+void main()
+{ int n;
+  double a[MAX], prom;
+  do
+  { 
+	  cout<<"Ingrese el numero de elementos: ";
+	  cin>>n;
+  }while((n<=0) || (n>100));
+  cargar(a,n);
+  prom=promedio(a,n);
+  mostrar(a,n);
+  cout<<"el promedio es: "<< prom;
+  getch();
+}
+
+void cargar(double a[], int tamanio)
+{ for(int i=0;i<tamanio;i++)
+     { cout<<"a["<<i<<"]: ";
+       cin>> a[i];
+     }
+}
+
+double promedio(double a[], int tamanio)
+{ double p,suma=0; 
+  for(int i=0;i<tamanio;i++)
+     suma=suma+a[i];
+  p=suma/tamanio;
+    
+  return p;
+    
+}
+
+ void mostrar(double a[], int tamanio)
+ { for(int i=0;i<tamanio;i++)
+     { cout<<"a["<<i<<"]: ";
+       cin>> a[i];
+     }
+ }
